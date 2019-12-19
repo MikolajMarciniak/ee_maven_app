@@ -1,5 +1,5 @@
 @PaymentCalculation
-Feature: Payment calculation
+Feature: Monthly payment calculation
   As the owner of the company
   I want to how much my clients have to pay me
   In order to inform them appropriately 
