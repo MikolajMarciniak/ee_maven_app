@@ -27,6 +27,9 @@ target/
 /.nb-gradle/
 build/
 
+### npm ###
+**/node/*
+
 ### VS Code ###
 .vscode/
 
@@ -35,10 +38,10 @@ src/main/frontend/.pnp
 src/main/frontend/.pnp.js
 
 # testing
-src/main/frontend//coverage
+src/main/frontend/coverage
 
 # production
-src/main/frontend//build
+src/main/frontend/build
 
 # misc
 src/main/frontend/.DS_Store
