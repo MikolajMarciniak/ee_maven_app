@@ -2,51 +2,22 @@ package com.premiumfaber.eemavenapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.premiumfaber.eemavenapp.Teacher;
+import com.premiumfaber.eemavenapp.TeacherRepo;
+import com.premiumfaber.eemavenapp.Guest;
+import com.premiumfaber.eemavenapp.Client;
+import com.premiumfaber.eemavenapp.Student;
+import com.premiumfaber.eemavenapp.Event;
+import com.premiumfaber.eemavenapp.EventRepo;
+import com.premiumfaber.eemavenapp.Lesson;
+import com.premiumfaber.eemavenapp.Contract;
 
 @SpringBootApplication
 public class EeMavenAppApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(EeMavenAppApplication.class, args);
+
     }
 
-    public class Event {
-        int Date;
-        public Event(int date) {
-            date = Date;
-        }
-    }
-
-    public class Lesson {
-        int Date;
-        public Lesson(int date) {
-            date = Date;
-        }
-    }
-
-    public class TeacherRepository {
-        int Date;
-        public TeacherRepository(int date) {
-            date = Date;
-        }
-    }
-
-    public class EventRepository {
-        int Date;
-        public EventRepository(int date) {
-            date = Date;
-        }
-    }
-
-    public class Contract {
-        int Date;
-        public Contract(int date) {
-            date = Date;
-        }
-    }
-
-    public class Person {
-        public Person() {
-        }
-    }
 }
