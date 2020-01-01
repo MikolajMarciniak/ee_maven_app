@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features="src/test/resources/com.premiumfaber.eemavenapp/",
+        features="src/test/resources/schoolapp/",
         plugin = {"pretty"})
 public class RunCucumberTest{
 }
