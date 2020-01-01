@@ -8,18 +8,18 @@ public class Person {
     name = newName;
     }
 
-    public String GetName(){
+    public String getName(){
         return name;
     }
-    public Float GetAttendance() {
+    public Float getAttendance() {
         //TO DO: code to calculate attendance of a person}
         return null;
     }
-    public Array GetStudentList(){
+    public Array getStudentList(){
         //TO DO: code to return list of all students}
         return null;
     }
-    public void DeactivateSelf(){
+    public void deactivateSelf(){
         // TO DO: method to deactivate/soft-delete self
     }
 }
