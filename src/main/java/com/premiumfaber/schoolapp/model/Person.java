@@ -1,23 +1,25 @@
 package com.premiumfaber.schoolapp.model;
 
-public class Person {
-    String name, type;
-    enum PersonType {
-        PERSON,
-        STUDENT,
-        TEACHER,
-        CLIENT,
-        GUEST
-    }
-    String newType = PersonType.PERSON.toString();
+import java.lang.reflect.Array;
 
+public class Person {
+    String name;
     public Person (String newName){
     name = newName;
-    type = newType;
     }
 
     public String GetName(){
         return name;
     }
-    public String GetType(){ return type;}
+    public Float GetAttendance() {
+        //TO DO: code to calculate attendance of a person}
+        return null;
+    }
+    public Array GetStudentList(){
+        //TO DO: code to return list of all students}
+        return null;
+    }
+    public void DeactivateSelf(){
+        // TO DO: method to deactivate/soft-delete self
+    }
 }

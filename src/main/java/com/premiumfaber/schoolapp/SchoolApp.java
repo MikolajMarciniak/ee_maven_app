@@ -11,9 +11,7 @@ public class SchoolApp {
     public static void main(String[] args) {
         SpringApplication.run(SchoolApp.class, args);
         Person miko=new Person("Mikołaj");
-        System.out.println(miko.GetType());
         Guest marc=new Guest("Marcel");
-        System.out.println(marc.GetType());
     }
 
 }
