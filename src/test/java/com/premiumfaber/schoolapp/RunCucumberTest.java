@@ -1,4 +1,4 @@
-package com.premiumfaber.eemavenapp;
+package com.premiumfaber.schoolapp;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

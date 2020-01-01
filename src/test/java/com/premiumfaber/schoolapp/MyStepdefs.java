@@ -1,4 +1,4 @@
-package com.premiumfaber.eemavenapp;
+package com.premiumfaber.schoolapp;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
