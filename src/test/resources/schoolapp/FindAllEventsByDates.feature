@@ -5,7 +5,7 @@ Feature: Find all events by dates
  
   Background: User has app opened
     Given User presses the "find all events" by date button
-    Then I should see a list of all past events
+    Then I should see all "events" in range filled
 
   Scenario: Website displays all events.
     When I fill "time range" field

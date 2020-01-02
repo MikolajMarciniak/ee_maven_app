@@ -11,11 +11,12 @@
     <groupId>com.premiumfaber</groupId>
     <artifactId>ee-maven-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ee-maven-app</name>
+    <name>school-app</name>
     <description>Maven-react app for managing EE-school</description>
 
     <properties>
         <java.version>11</java.version>
+        <cucumber.version>4.8.0</cucumber.version>
     </properties>
 
     <dependencies>
@@ -51,14 +52,21 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>4.8.0</version>
+            <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>4.8.0</version>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
 

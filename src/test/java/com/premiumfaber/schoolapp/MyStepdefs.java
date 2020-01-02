@@ -1,12 +1,34 @@
 package com.premiumfaber.schoolapp;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.core.Is.is;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.premiumfaber.schoolapp.infrastructure.EventRepo;
+import com.premiumfaber.schoolapp.model.Event;
+
+import cucumber.api.PendingException;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class MyStepdefs {
+
+    private static final Event EVENT_1 = new Event("01-01-2020", "New Year Eve Party");
+    @Autowired
+    EventRepo eventRepo;
+    private List<Event> allEvents;
+
     //////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////MonthlyPayment/////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -205,4 +227,32 @@ public class MyStepdefs {
         throw new PendingException();
     }
 
+    @Given("User calls find all Events function")
+    public void userCallsFindAllEventsButton() {
+        allEvents = eventRepo.findAllEvents();
+    }
+
+    @Then("the user should see a list of all events")
+    public void theUserShouldSeeAListOfAllEvents() {
+        assertThat(allEvents, notNullValue());
+        assertThat(allEvents, hasSize(greaterThan(0)));
+        assertThat(allEvents, hasItem(EVENT_1));
+    }
+
+    @Given("User loads an app")
+    public void userLoadsAnApp() {
+        eventRepo.clear();
+        eventRepo.save(EVENT_1);
+    }
+
+    @And("User creates and saves new event with date {string} and name {string}")
+    public void userCreatesAndSavesNewEvent(String eventDate, String eventName) {
+        Event event =  new Event(eventDate, eventName);
+        eventRepo.save(event);
+    }
+
+    @And("the user should see a the event with date {string} and name {string}")
+    public void theUserShouldSeeATheEvent(String eventDate, String eventName) {
+        assertThat(allEvents.stream().anyMatch(event -> event.getDate().equals(eventDate) && event.getEventName().equals(eventName)), is(true));
+    }
 }

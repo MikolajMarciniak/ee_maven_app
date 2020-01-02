@@ -1,25 +1,36 @@
 package com.premiumfaber.schoolapp.infrastructure;
 
-import java.lang.reflect.Array;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.springframework.stereotype.Component;
+
+import com.premiumfaber.schoolapp.model.Event;
+
+@Component
 public class EventRepo {
-    public EventRepo(){
+    private List<Event> dataStore = new ArrayList<>();
+
+    public EventRepo() {
 
     }
-    public Array findAllEvents(){
-        //TO DO: code to return list of all events
-        return null;
+
+    public List<Event> findAllEvents(){
+        return dataStore;
     }
-    public Array findAllFutureEvents(){
-        //TO DO: code to return a list of events after specified time or current time (if no date supplied)
-        return null;
-    }
-    public Array findAllPastEvents(){
-        //TO DO: code to return a list of all events before specified time or current time (if no date supplied)
-        return null;
-    }
-    public Array findAllEventsByDate(){
+
+    public List<Event> findAllEventsByDate(LocalDateTime start, LocalDateTime end){
         //TO DO: code to return a list of all events within range
         return null;
+    }
+
+    public Event save(Event event) {
+        dataStore.add(event);
+        return event;
+    }
+
+    public void clear() {
+        dataStore.clear();
     }
 }
