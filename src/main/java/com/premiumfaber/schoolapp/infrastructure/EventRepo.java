@@ -28,7 +28,7 @@ public class EventRepo {
     public List<Event> findAllEventsByDate(LocalDateTime start, LocalDateTime end){
         //List <Event> listClone = new ArrayList<>();
         //for (String string : dataStore) {
-        //    if(string.matches("(?i)(bea).*")){
+        //    if(string = start){
         //        listClone.add(string);
         //    }
         //}
