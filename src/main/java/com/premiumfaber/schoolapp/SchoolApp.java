@@ -1,5 +1,6 @@
 package com.premiumfaber.schoolapp;
 
+import com.premiumfaber.schoolapp.infrastructure.EventRepo;
 import com.premiumfaber.schoolapp.model.Guest;
 import com.premiumfaber.schoolapp.model.Person;
 import org.springframework.boot.SpringApplication;
@@ -12,6 +13,8 @@ public class SchoolApp {
         SpringApplication.run(SchoolApp.class, args);
         Person miko=new Person("Mikołaj");
         Guest marc=new Guest("Marcel");
+        EventRepo repo = new EventRepo();
+        repo.getList();
     }
 
 }
